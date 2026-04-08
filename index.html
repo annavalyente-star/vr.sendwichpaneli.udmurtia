@@ -5,194 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Производство и поставка сэндвич панелей в Ижевске — Восток Ресурс</title>
     <style>
-        :root { 
-            --purple: #2d1b4d; 
-            --gold: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 70%, #fcf6ba 85%, #aa771c 100%); 
-        }
-        body { margin: 0; font-family: 'Segoe UI', Tahoma, sans-serif; color: var(--purple); line-height: 1.6; background: #fff; }
-
-        .gold-text { background: var(--gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; display: inline-block; }
-
-        /* Шапка сайта */
-        nav { padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 100; box-sizing: border-box; }
-        .logo { font-weight: 900; font-size: 20px; text-decoration: none; color: var(--purple); text-transform: uppercase; }
-        .geo-badge { background: #f1f8e9; color: #2e7d32; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid #c8e6c9; }
-        .phone { font-weight: 700; font-size: 14px; text-decoration: none; color: var(--purple); }
-
-        /* Контентная область (как на скрине) */
-        .hero { padding: 60px 8% 40px; text-align: center; background: #fff; }
-        h1 { font-size: clamp(22px, 4vw, 34px); margin-bottom: 20px; color: var(--purple); }
-        .hero-sub { max-width: 900px; margin: 0 auto 40px; font-size: 14px; opacity: 0.7; line-height: 1.6; }
-
-        /* Три плашки преимуществ */
-        .features-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto 50px; }
-        .feat-item { background: #f8f9fc; padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #f0f0f0; }
-        .feat-item h3 { font-size: 14px; margin: 5px 0; color: var(--purple); font-weight: 800; }
-        .feat-item p { font-size: 12px; margin: 0; opacity: 0.6; }
-
-        /* Калькулятор (дизайн со скриншота) */
-        .calc-wrapper { 
-            background: var(--purple); color: white; border-radius: 35px; 
-            display: grid; grid-template-columns: 1fr 1.3fr; overflow: hidden; 
-            max-width: 1050px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.1); text-align: left;
-        }
-        .calc-left { background: #fff; padding: 40px; color: var(--purple); text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .calc-left img { width: 100%; max-width: 320px; margin-bottom: 20px; border-radius: 10px; }
-        .calc-right { padding: 40px 50px; }
+        body { font-family: 'Arial', sans-serif; margin: 0; background-color: #f9f9f9; color: #333; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #fff; border-bottom: 1px solid #eee; }
+        .logo { font-weight: bold; font-size: 22px; color: #2D1B4E; }
+        .logo span { color: #DAA520; }
+        .geo-top { color: #28a745; font-size: 14px; }
         
-        label { display: block; margin-bottom: 5px; font-size: 13px; opacity: 0.8; }
-        select, input { width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #eee; font-size: 15px; box-sizing: border-box; }
+        .hero { text-align: center; padding: 40px 10%; }
+        h1 { font-size: 32px; margin-bottom: 10px; }
+        h1 span { color: #DAA520; }
+        .sub-text { color: #888; font-size: 14px; max-width: 800px; margin: 0 auto 40px; line-height: 1.5; }
+        
+        .features { display: flex; justify-content: center; gap: 20px; margin-bottom: 50px; }
+        .feature-card { background: #fff; padding: 12px 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 14px; }
 
-        .total-row { font-size: 20px; font-weight: 900; margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-transform: uppercase; }
-        .gold-btn { display: block; background: var(--gold); color: #2d1b4d; text-align: center; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: 900; text-transform: uppercase; margin-top: 20px; transition: 0.3s; }
-        .gold-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .main-card { display: flex; background: #fff; max-width: 950px; margin: 0 auto 60px; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .calc-left { flex: 1; padding: 40px; text-align: center; border-right: 1px solid #eee; }
+        .calc-left img { width: 100%; max-width: 300px; margin-top: 30px; }
+        
+        .calc-right { flex: 1; background: #2D1B4E; color: white; padding: 40px; }
+        label { display: block; font-size: 12px; margin-bottom: 6px; opacity: 0.8; }
+        select, input { width: 100%; padding: 12px; border-radius: 10px; border: none; margin-bottom: 18px; font-size: 15px; box-sizing: border-box; outline: none; }
+        .total-row { font-size: 26px; font-weight: bold; margin: 15px 0; }
+        .btn-order { width: 100%; padding: 18px; border: none; border-radius: 40px; background: linear-gradient(180deg, #f7d983 0%, #c5a15d 100%); color: #2D1B4E; font-weight: bold; font-size: 15px; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
 
-        /* Футер */
-        footer { padding: 60px 8%; border-top: 1px solid #eee; margin-top: 60px; background: #fff; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; font-size: 13px; }
-
-        @media (max-width: 850px) { 
-            .calc-wrapper { grid-template-columns: 1fr; } 
-            nav { padding: 10px 5%; }
-        }
+        footer { background: #2D1B4E; color: white; padding: 60px 10% 30px; }
+        .footer-content { display: flex; justify-content: space-between; gap: 40px; margin-bottom: 40px; }
+        .footer-col { flex: 1; }
+        .footer-col h4 { color: #DAA520; margin-bottom: 20px; text-transform: uppercase; font-size: 14px; }
+        .footer-col p, .footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; display: block; margin-bottom: 10px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 12px; color: rgba(255,255,255,0.5); }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="logo">ВОСТОК <span class="gold-text">РЕСУРС</span></a>
-        <div id="dynamicGeo" class="geo-badge">Доставка в Ижевск от 24 часов</div>
-        <a href="tel:+79524053937" class="phone">+7 (952) 405 39 37</a>
-    </nav>
+    <header>
+        <div class="logo">ВОСТОК <span>РЕСУРС</span></div>
+        <div class="geo-top">Доставка в Ижевск от 24 часов</div>
+        <div style="font-weight: bold;">+7 (952) 405 39 37</div>
+    </header>
 
     <div class="hero">
-        <h1>Производство и поставка сэндвич панелей в <span id="h1City" class="gold-text">Ижевске</span> — <span class="gold-text">Восток Ресурс</span></h1>
-        <div class="hero-sub">
-            Прямой завод-производитель. Стеновые и кровельные панели (МВ, ПИР, ППС) с замком Z-Lock. 
-            Собственный автопарк 40+ машин. Бесплатный расчет раскладки штатным проектировщиком.
+        <h1 id="hiCity">Производство и поставка сэндвич панелей в <span>Ижевске</span> — Восток Ресурс</h1>
+        <p class="sub-text">Прямой завод-производитель. Стеновые и кровельные панели (МВ, ПИР, ППС) с замком Z-Lock. Собственный автопарк 40+ машин. Бесплатный расчет раскладки проектировщиком.</p>
+
+        <div class="features">
+            <div class="feature-card">🚚 Доставка 24ч</div>
+            <div class="feature-card">📐 Проектировщик</div>
+            <div class="feature-card">🔥 КМ0 / НГ</div>
         </div>
 
-        <div class="features-row">
-            <div class="feat-item">
-                <h3>🚚 Доставка 24ч</h3>
-                <p>по Удмуртии со склада</p>
-            </div>
-            <div class="feat-item">
-                <h3>📐 Проектировщик</h3>
-                <p>бесплатная спецификация</p>
-            </div>
-            <div class="feat-item">
-                <h3>🔥 КМ0 / НГ</h3>
-                <p>полная пожаробезопасность</p>
-            </div>
-        </div>
-
-        <div class="calc-wrapper">
+        <div class="main-card">
             <div class="calc-left">
-                <!-- Картинки из твоей папки -->
-                <img id="panelImg" src="mw-panel.png" alt="Сэндвич-панель">
-                <h3 id="panelName" class="gold-text">МВ Панели (Минвата)</h3>
-                <p style="font-size: 12px; opacity: 0.6;">Z-Lock соединение</p>
+                <img id="panelImg" src="mv-panel.png">
+                <h3 id="panelName" style="color: #c5a15d; margin-top: 25px;">МВ Панели (Минвата)</h3>
+                <p style="color: #aaa; font-size: 12px;">Z-lock соединение</p>
             </div>
+
             <div class="calc-right">
                 <label>Выберите наполнитель:</label>
-                <select id="mat" onchange="run()"></select>
+                <select id="mat" onchange="run()">
+                    <option value="mv">МВ Панели (Минвата)</option>
+                    <option value="pps">ППС Панели (Пенопласт)</option>
+                    <option value="pir">PIR Панели (ПИР)</option>
+                </select>
+
+                <label>Толщина панели (мм):</label>
+                <select id="thick" onchange="run()">
+                    <option value="60">60 мм</option>
+                    <option value="80">80 мм</option>
+                    <option value="100" selected>100 мм</option>
+                    <option value="120">120 мм</option>
+                    <option value="150">150 мм</option>
+                    <option value="200">200 мм</option>
+                    <option value="250">250 мм</option>
+                </select>
 
                 <label>Цвет RAL (базовый):</label>
-                <input type="text" id="ral" value="RAL 9003 (Белый)">
+                <select id="ral">
+                    <option value="9003">RAL 9003 (Белый)</option>
+                    <option value="1014">RAL 1014 (Сл. кость)</option>
+                    <option value="7004">RAL 7004 (Серый)</option>
+                    <option value="7024">RAL 7024 (Графит)</option>
+                    <option value="8017">RAL 8017 (Шоколад)</option>
+                </select>
 
                 <label>Общая площадь (м²):</label>
                 <input type="number" id="area" value="100" oninput="run()">
 
-                <div class="total-row">
-                    Итого: <span id="total" style="color: #fcf6ba; font-size: 26px; margin-left: 10px;">0 ₽</span>
-                </div>
-                <a href="tel:+79524053937" class="gold-btn">Оформить заявку</a>
+                <div class="total-row">ИТОГО: <span id="total">0</span> Р</div>
+                <button class="btn-order">Оформить заявку</button>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="footer-grid">
-            <div>
-                <h4 style="color:#b38728; margin-top:0">Завод «Восток Ресурс»</h4>
-                <p>Производство и логистика сэндвич-панелей для быстровозводимых зданий в Удмуртии.</p>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo">ВОСТОК <span style="color: #DAA520;">РЕСУРС</span></div>
+                <p style="margin-top:20px">Завод-производитель сэндвич-панелей с 2014 года. Гарантия качества и быстрой доставки.</p>
             </div>
-            <div>
-                <h4 style="margin-top:0">Контакты</h4>
-                <p><strong>Офис:</strong> г. Ижевск, ул. М. Горького, 68, каб. 501</p>
-                <p><strong>Завод:</strong> д. Хохряки, ул. Трактовая 10 Б</p>
+            <div class="footer-col">
+                <h4>Продукция</h4>
+                <a href="#">Стеновые панели</a>
+                <a href="#">Кровельные панели</a>
+                <a href="#">Комплектующие</a>
             </div>
-            <div>
-                <h4 style="margin-top:0">Юр. данные</h4>
-                <p>ООО «Восток Ресурс»<br>ИНН: 1840105340<br>ОГРН: 1211800015505</p>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p>г. Ижевск, ул. Пушкинская, 270</p>
+                <p>+7 (952) 405 39 37</p>
+                <p>vostok-resurs@mail.ru</p>
             </div>
         </div>
+        <div class="footer-bottom">&copy; 2026 Восток Ресурс. Все права защищены.</div>
     </footer>
 
-    <script>
-        // Твои данные по ценам и фото
-        const DATA = {
-            mw:  { name: 'МВ Панели (Минвата)', img: 'mw-panel.png',  price: 2281 },
-            pir: { name: 'PIR Панели (ПИР)',    img: 'pir-panel.png', price: 3043 },
-            pps: { name: 'ППС Панели (ППС)',    img: 'pps-panel.png', price: 2508 }
-        };
+<script>
+const DATA = {
+    'mv': {
+        name: 'МВ Панели (Минвата)',
+        img: 'mv-panel.png',
+        prices: {60: 2101, 80: 2241, 100: 2381, 120: 2521, 150: 2731, 200: 3081, 250: 3431}
+    },
+    'pps': {
+        name: 'ППС Панели (Пенопласт)',
+        img: 'pps-panel.png',
+        prices: {60: 1713, 80: 1774, 100: 1834, 120: 1894, 150: 1985, 200: 2136, 250: 2287}
+    },
+    'pir': {
+        name: 'PIR Панели (ПИР)',
+        img: 'pir-panel.png',
+        prices: {60: 2149, 80: 2341, 100: 2533, 120: 2725, 150: 3013, 200: 3493, 250: 3973}
+    }
+};
 
-        const matSelect = document.getElementById('mat');
-        for (let id in DATA) {
-            let opt = document.createElement('option');
-            opt.value = id;
-            opt.innerHTML = `${DATA[id].name} — от ${DATA[id].price} ₽/м²`;
-            matSelect.appendChild(opt);
+function run() {
+    const mat = document.getElementById('mat').value;
+    const thick = document.getElementById('thick').value;
+    const area = parseFloat(document.getElementById('area').value) || 0;
+    
+    const item = DATA[mat];
+    const price = item.prices[thick];
+    
+    document.getElementById('panelImg').src = item.img;
+    document.getElementById('panelName').innerText = item.name;
+    document.getElementById('total').innerText = Math.round(area * price).toLocaleString('ru-RU');
+}
+
+async function setupGeo() {
+    const params = new URLSearchParams(window.location.search);
+    const cityParam = params.get('city');
+    const geoData = {
+        'sarapul': { nom: 'Сарапул', in: 'Сарапуле' },
+        'glazov': { nom: 'Глазов', in: 'Глазове' },
+        'votkinsk': { nom: 'Воткинск', in: 'Воткинске' },
+        'izhevsk': { nom: 'Ижевск', in: 'Ижевске' }
+    };
+    const apply = (key) => {
+        if(geoData[key]) {
+            document.getElementById('hiCity').innerHTML = `Производство и поставка сэндвич панелей в <span>${geoData[key].in}</span> — Восток Ресурс`;
         }
+    };
+    if(cityParam) apply(cityParam.toLowerCase());
+    else apply('izhevsk');
+}
 
-        // Функция расчета
-        function run() {
-            const id = matSelect.value;
-            const area = parseFloat(document.getElementById('area').value) || 0;
-            const item = DATA[id];
-            document.getElementById('panelImg').src = item.img;
-            document.getElementById('panelName').innerText = item.name;
-            const total = area * item.price;
-            document.getElementById('total').innerText = Math.round(total).toLocaleString() + ' ₽';
-        }
-
-        // Скрипт автоподмены города (Геопозиция)
-        async function setupGeo() {
-            const params = new URLSearchParams(window.location.search);
-            const cityParam = params.get('city');
-            const h1City = document.getElementById('h1City');
-            const dynamicGeo = document.getElementById('dynamicGeo');
-
-            const geoData = {
-                'sarapul':  { nom: 'Сарапул', in: 'Сарапуле' },
-                'glazov':   { nom: 'Глазов',  in: 'Глазове' },
-                'votkinsk': { nom: 'Воткинск', in: 'Воткинске' },
-                'izhevsk':  { nom: 'Ижевск',  in: 'Ижевске' }
-            };
-
-            const apply = (key) => {
-                if(geoData[key]) {
-                    dynamicGeo.innerText = `Доставка в ${geoData[key].nom} от 24 часов`;
-                    h1City.innerText = geoData[key].in;
-                }
-            };
-
-            if(cityParam) apply(cityParam.toLowerCase());
-            else {
-                try {
-                    const res = await fetch('https://ipapi.co');
-                    const data = await res.json();
-                    if(data.city) {
-                        const c = data.city.toLowerCase();
-                        if(c.includes('glazov')) apply('glazov');
-                        else if(c.includes('sarapul')) apply('sarapul');
-                        else apply('izhevsk');
-                    }
-                } catch(e) { apply('izhevsk'); }
-            }
-        }
-        window.onload = () => { run(); setupGeo(); };
-    </script>
+window.onload = () => { setupGeo(); run(); };
+</script>
 </body>
 </html>
